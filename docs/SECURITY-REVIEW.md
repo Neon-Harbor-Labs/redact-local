@@ -10,8 +10,8 @@ Status key: **TESTED** = automated test or recorded manual test in docs/TEST-RES
 | Document text is never written into the page as HTML | TESTED | static test forbids `innerHTML`/`eval`/`document.write` in our scripts; all document text is inserted with `textContent` |
 | Blob URLs (page previews, download) are released when a new file is opened | REVIEWED | `blobUrl()` / `revokeObjectURL` in `app.js` |
 
-## HTTP headers (Cloudflare Pages `_headers`)
-Tested against the real HTTP responses of `tools/serve.mjs` (which applies `public/_headers`) with `tools/check-headers.mjs`; **re-run it against the live URL after deploying** (`node tools/check-headers.mjs https://redact.neonharborlabs.com`).
+## HTTP headers (Cloudflare Workers static-assets `_headers`)
+Tested against the real HTTP responses of `tools/serve.mjs` (which applies `public/_headers`) with `tools/check-headers.mjs`; **re-run it against the live URL after deploying** (`node tools/check-headers.mjs https://redact-local.juleus.workers.dev`; it follows same-origin redirects only).
 - `Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; connect-src 'self'; img-src 'self' blob: data:; style-src 'self'; font-src 'self' blob: data:; object-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'` - no `unsafe-inline`, no `unsafe-eval`, no remote hosts. `'wasm-unsafe-eval'` is required to run the MuPDF and Tesseract WebAssembly.
 - `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`, `X-Frame-Options: DENY` (plus `frame-ancestors 'none'`), `Cross-Origin-Opener-Policy: same-origin`, `Cross-Origin-Resource-Policy: same-origin`, `Permissions-Policy` denying camera, microphone, geolocation, etc.
 - Correct `Content-Type` for `.wasm`, `.js`/`.mjs`; the `.gz` language data must not be sent with `Content-Encoding` (checked by the script).
@@ -34,7 +34,7 @@ NOT TESTED: fuzzing with large corpora of real-world malformed PDFs; PDFs crafte
 - NOT AUDITED: the upstream projects themselves (MuPDF, pdf.js, Tesseract, compromise). Watch their security advisories.
 
 ## Hosting
-- Static files only. No Workers/Functions code, no bindings, no AI binding; the Pages project is separate from every existing Workers project (see docs/NEON-HARBOR-INTEGRATION.md).
+- Static files only, served as a Cloudflare Worker with static assets and no Worker script: no Functions code, no bindings, no AI binding; the `redact-local` Worker is separate from every existing Workers project (see docs/NEON-HARBOR-INTEGRATION.md).
 - Turn off Cloudflare features that inject scripts or rewrite HTML (Web Analytics beacon, Rocket Loader, Auto Minify, Email Address Obfuscation); CSP would block injected scripts anyway.
 
 ## Not independently audited

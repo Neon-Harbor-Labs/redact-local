@@ -15,11 +15,11 @@ A free software project by Neon Harbor Labs. Redact Local runs entirely in your 
 ## Run it locally
 Requires Node.js 20+ (no npm dependencies). Everything the app needs is committed under `public/`.
 ```sh
-npm run serve          # http://127.0.0.1:8788 - static server that applies public/_headers like Cloudflare Pages
+npm run serve          # http://127.0.0.1:8788 - static server that applies public/_headers like Cloudflare static assets
 npm test               # unit, PDF, header and static-content tests (17 tests)
 npm run check:vendor   # every vendored file matches its pinned SHA-256
 node tools/fetch-vendor.mjs --hashes-only   # ...and matches the hash published by the upstream package (network)
-npm run check:size     # Cloudflare Pages limits (25 MiB per file)
+npm run check:size     # Cloudflare static-assets limits (25 MiB per file)
 ```
 Any static file server works for development, but only `tools/serve.mjs` reproduces the production response headers. Browser self-test: `node tools/serve.mjs --test` then open `http://127.0.0.1:8788/__tests/selftest.html?id=mybrowser`; the report lands in `tests/out/`.
 

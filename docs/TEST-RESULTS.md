@@ -19,7 +19,7 @@ All documents are synthetic; all names and numbers are fictional.
 ✔ required wording, source link and About page are present
 ✔ no junk, secrets or personal data in the release
 ✔ vendored files match their pinned upstream hashes
-✔ every file fits Cloudflare Pages limits
+✔ every file fits Cloudflare static-assets limits
 ```
 
 ## 2. Real HTTP response headers (`curl -I` against `tools/serve.mjs`, which applies public/_headers; `tools/check-headers.mjs` also passed)
@@ -36,7 +36,7 @@ Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), m
 Cache-Control: no-cache
 ```
 Checked per path: `/`, `/index.html`, `/about.html`, `/js/app.js`, `/js/worker.js`, the MuPDF .wasm, the pdf.js worker, the Tesseract worker and core, the language data and the AGPL text: all return the headers above, correct Content-Type (`application/wasm`, `text/javascript`, ...), no Content-Encoding on the .gz data and no cookies.
-**Re-run after deploying:** `node tools/check-headers.mjs https://<your-url>` (Cloudflare Pages itself has not been tested).
+**Re-run after deploying:** `node tools/check-headers.mjs https://<your-url>` (tested on the live Workers static-assets preview, see below).
 
 ## 3. No external requests while processing a PDF
 - Network log of the browser pane for a complete run (open text PDF, OCR of a mixed PDF, redact, verify, download link): every request is to `127.0.0.1:8790` or `blob:`. No other host.
@@ -67,7 +67,7 @@ In the UI, after a rejected file the work area is hidden, the old result is clea
 | Phones / tablets | not tested (narrow-window layout checked at 420 px: pages scale to fit, no horizontal scroll) |
 | OCR unsupported (simulated: WebAssembly SIMD probe forced to fail) | banner: "OCR could not run (this browser does not support WebAssembly SIMD ...), so nothing was detected there" |
 
-## 6. Vendored files and Pages limits
+## 6. Vendored files and hosting limits
 `npm run check:vendor`: 11 files match pinned SHA-256; `node tools/fetch-vendor.mjs --hashes-only`: all 11 equal the hashes published by the package registry mirror.
 ```
    9.93 MiB  vendor/mupdf/mupdf-wasm.wasm
@@ -77,3 +77,8 @@ In the UI, after a rejected file the work area is hidden, the old result is clea
    1.21 MiB  vendor/pdfjs/pdf.worker.min.mjs
    0.44 MiB  vendor/pdfjs/pdf.min.mjs
 ```
+
+## 7. Live preview (Cloudflare Workers static assets, https://redact-local.juleus.workers.dev)
+- `node tools/check-headers.mjs <url>` passes (same-origin redirects followed: `/index.html` -> `/`, `/about.html` -> `/about`). Served wasm/OCR data/app.js/HTML are byte-identical to the release files.
+- Chrome, in-browser: a synthetic text PDF and a synthetic scanned PDF (OCR) were processed, verified and downloaded; all requests same-origin; no CSP violations or console errors.
+- Not tested live: mixed text+image PDF, Firefox, phones/iPhone.

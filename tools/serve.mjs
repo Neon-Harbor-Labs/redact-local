@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
-// Static server for public/ that applies public/_headers exactly like Cloudflare Pages would (path rules, merged headers).
+// Static server for public/ that applies public/_headers exactly like Cloudflare static assets would (path rules, merged headers).
 // Usage: node tools/serve.mjs --port 8788 [--test]   (--test also serves tests/browser at /__tests/ and accepts POST /__report)
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'), pub = path.join(root, 'public');

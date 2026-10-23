@@ -1,9 +1,9 @@
 # Neon Harbor Labs integration (proposal - nothing here has been applied)
-**Proposed URL:** `https://redact.neonharborlabs.com` (a separate Cloudflare Pages project named `redact-local`; fallback URL `https://redact-local.pages.dev`).
+**Proposed URL:** `https://redact.neonharborlabs.com` (a separate Cloudflare Worker with static assets named `redact-local`; current preview URL `https://redact-local.juleus.workers.dev`). The custom domain is NOT connected.
 
-## Why a subdomain and a separate Pages project
+## Why a subdomain and a separate Worker
 - The existing site (`neonharbor-labs-site`) is a Cloudflare Workers static-assets project on the apex domain. Redact Local needs a different, stricter Content-Security-Policy (`wasm-unsafe-eval`, workers) than the site's `_headers`; separate hostnames keep each policy tight.
-- Pages with static files only: no Worker script, no AI binding, no KV/R2/D1. It cannot consume the AI quota of any existing Workers project and is not affected by their limits.
+- Static assets only: no Worker script, no AI binding, no KV/R2/D1. It cannot consume the AI quota of any existing Workers project and is not affected by their limits.
 - Rolling back or taking the tool down never touches the main site.
 
 ## Navigation / project card (to apply later in the site repo)
@@ -14,7 +14,7 @@ The site's `src/content/site.ts` defines nav entries and project groups. Suggest
 If you want a top-nav link, add `{ label: 'Redact Local', to: 'https://redact.neonharborlabs.com', key: 'redact', desktop: true }` and make the header render absolute URLs as plain `<a>` elements (the current nav uses in-site routes/anchors). Link text for footers: "Redact Local (open source)" -> the same URL, plus the repository link.
 The site's own `_headers` CSP (`default-src 'self'`, `form-action 'self' mailto:`) is unaffected by a plain outbound link.
 
-## Hosting limits (Cloudflare Pages)
+## Hosting limits (Cloudflare Workers static assets)
 Largest file 9.93 MiB (limit 25 MiB); 40 files (limit 20,000); total about 22.7 MiB. Verified by `npm run check:size`.
 
 ## Checklist before announcing
