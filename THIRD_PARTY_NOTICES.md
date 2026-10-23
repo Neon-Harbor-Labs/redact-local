@@ -22,8 +22,9 @@ This site redistributes the following components unmodified. Full license texts 
 
 4. tesseract.js-core 7.0.0 - License: Apache-2.0 (tesseract-core-LICENSE.txt). Source: https://github.com/naptha/tesseract.js-core
    A WebAssembly build of Tesseract OCR (Apache-2.0, tesseract-ocr-LICENSE.txt) compiled together with Leptonica, zlib, libtiff,
-   giflib, libpng, libjpeg and libwebp (list taken from the core's build.sh); each of those projects is distributed under its own
-   permissive license (BSD-, zlib-, libpng-, IJG- or MIT-style), published in the respective upstream source trees.
+   giflib, libpng, libjpeg, libwebp and OpenLibm (list taken from the core's .gitmodules and build.sh); their license texts are in
+   tesseract-core-bundled-libraries.txt.
+   This software is based in part on the work of the Independent JPEG Group.
    Files: vendor/tesseract/core/tesseract-core-relaxedsimd-lstm.wasm.js, tesseract-core-simd-lstm.wasm.js
 
 5. Tesseract English language data, "4.0.0_best_int" from @tesseract.js-data/eng 1.0.0 (integerized "tessdata_best").

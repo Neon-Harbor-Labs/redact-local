@@ -16,7 +16,7 @@ test('required wording, source link and About page are present', () => {
   assert(idx.includes(tag) && about.includes(tag)); assert(/Source code/.test(idx) && /github\.com\/neon-harbor-labs\/redact-local/.test(idx)); assert(/about\.html/.test(idx));
   for (const s of ['processed on this device only', 'Detection can miss information', 'Inspect the result before sharing', 'does <em>not</em> prove that every sensitive item was found']) assert(idx.includes(s), s);
   for (const c of ['MuPDF.js', 'pdf.js', 'Tesseract.js', 'tesseract.js-core', 'compromise', 'AGPL-3.0-or-later', 'Apache-2.0', 'MIT']) assert(about.includes(c), c);
-  for (const lic of ['AGPL-3.0.txt', 'mupdf-LICENSE.txt', 'pdfjs-LICENSE.txt', 'tesseractjs-LICENSE.txt', 'tesseract-core-LICENSE.txt', 'tessdata_best-LICENSE.txt', 'compromise-LICENSE.txt', 'NOTICES.txt']) assert(fs.existsSync(path.join(pub, 'licenses', lic)), lic);
+  for (const lic of ['AGPL-3.0.txt', 'mupdf-LICENSE.txt', 'pdfjs-LICENSE.txt', 'tesseractjs-LICENSE.txt', 'tesseract-core-LICENSE.txt', 'tessdata_best-LICENSE.txt', 'compromise-LICENSE.txt', 'NOTICES.txt', 'tesseract-core-bundled-libraries.txt']) assert(fs.existsSync(path.join(pub, 'licenses', lic)), lic);
   assert(!/overclaim|guarantee(?!s that all)/i.test(idx) || /does not guarantee/i.test(idx));
   assert(!/completely anonym|100% (safe|secure)|guaranteed removal/i.test(idx + about));
 });

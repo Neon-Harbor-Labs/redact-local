@@ -15,7 +15,7 @@ If you want a top-nav link, add `{ label: 'Redact Local', to: 'https://redact.ne
 The site's own `_headers` CSP (`default-src 'self'`, `form-action 'self' mailto:`) is unaffected by a plain outbound link.
 
 ## Hosting limits (Cloudflare Pages)
-Largest file 9.93 MiB (limit 25 MiB); 87 files (limit 20,000); total about 23 MiB. Verified by `npm run check:size`.
+Largest file 9.93 MiB (limit 25 MiB); 40 files (limit 20,000); total about 22.7 MiB. Verified by `npm run check:size`.
 
 ## Checklist before announcing
 Security review items in docs/SECURITY-REVIEW.md; the mailbox in SECURITY.md exists; the repository URL in `public/index.html` and `public/about.html` is the real one; a legal check of the AGPL obligations (source link visible, notices shipped).
