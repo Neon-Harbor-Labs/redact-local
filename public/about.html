@@ -8,12 +8,24 @@
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<header>
-  <h1><a href="./" style="color:inherit;text-decoration:none">Redact Local</a></h1>
-  <nav class="topnav" aria-label="Site"><a href="./">The tool</a><a href="https://github.com/Neon-Harbor-Labs/redact-local">Source code</a></nav>
-  <p class="tag">A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information&mdash;even in scanned documents.</p>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="./" aria-label="Redact Local home">
+      <img src="img/neon-harbor-labs-logo-480.webp" srcset="img/neon-harbor-labs-logo-480.webp 480w, img/neon-harbor-labs-logo-960.webp 960w" sizes="110px" width="110" height="44" alt="Neon Harbor Labs">
+      <span class="brand-text"><b>Redact Local</b><small>Private PDF redaction</small></span>
+    </a>
+    <nav class="topnav" aria-label="Site">
+      <a href="./">The tool</a>
+      <a href="https://github.com/Neon-Harbor-Labs/redact-local">Source code</a>
+      <a class="navpill" href="https://neonharborlabs.com">Neon Harbor Labs <span aria-hidden="true">&#8599;</span></a>
+    </nav>
+  </div>
 </header>
-<main class="prose">
+<main id="content" class="prose">
+<h1>About Redact Local</h1>
+<p class="lede">A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information&mdash;even in scanned documents.</p>
+
 
 <h2 id="how">How it works</h2>
 <ol>
@@ -57,12 +69,19 @@
 <tr><td>tesseract.js-core (WebAssembly build of Tesseract OCR with Leptonica, zlib, libtiff, giflib, libpng, libjpeg, libwebp, OpenLibm)</td><td>7.0.0</td><td>Apache-2.0 (Tesseract); the bundled libraries have their own permissive licenses (see below)</td><td>OCR engine</td><td><a href="licenses/tesseract-core-LICENSE.txt">license</a> &middot; <a href="licenses/tesseract-ocr-LICENSE.txt">Tesseract OCR license</a> &middot; <a href="https://github.com/naptha/tesseract.js-core">source</a></td></tr>
 <tr><td>Tesseract English language data (&ldquo;tessdata_best&rdquo;, integerized)</td><td>4.0.0_best_int</td><td>Apache-2.0</td><td>OCR language model</td><td><a href="licenses/tessdata_best-LICENSE.txt">license</a> &middot; <a href="https://github.com/tesseract-ocr/tessdata_best">source</a></td></tr>
 <tr><td>compromise, &copy; Spencer Kelly</td><td>14.19.0</td><td>MIT</td><td>suggesting personal names</td><td><a href="licenses/compromise-LICENSE.txt">license</a> &middot; <a href="https://github.com/spencermountain/compromise">source</a></td></tr>
+<tr><td>Poppins (typeface), &copy; 2020 The Poppins Project Authors</td><td>Latin subset, WOFF</td><td>SIL OFL 1.1</td><td>page typography (self-hosted)</td><td><a href="licenses/poppins-LICENSE.txt">license</a> &middot; <a href="https://github.com/itfoundry/Poppins">source</a></td></tr>
 </tbody></table>
+<p>The Neon Harbor Labs logo in the header (<code>img/</code>) is a brand asset of Neon Harbor Labs. It is shown to identify the publisher; whether and how it is covered by the AGPL grant is an open point listed in the repository&rsquo;s <code>docs/LEGAL-NOTES.md</code>.</p>
 <p>The OCR engine also contains Leptonica, zlib, libtiff, giflib, libpng, libjpeg, libwebp and OpenLibm; their license texts are in <a href="licenses/tesseract-core-bundled-libraries.txt">tesseract-core-bundled-libraries.txt</a>. This software is based in part on the work of the Independent JPEG Group.</p>
 <p>Notices bundled inside Tesseract.js (<a href="licenses/tesseractjs-worker.min.js.LICENSE.txt">worker</a>, <a href="licenses/tesseractjs-tesseract.min.js.LICENSE.txt">loader</a>) cover the MIT/BSD-3-Clause code it includes (buffer, ieee754, regenerator-runtime, zlib.js). See <a href="licenses/NOTICES.txt">NOTICES.txt</a> for the full attribution text.</p>
 <p><b>Not legally reviewed.</b> The license information on this page was compiled in good faith from the upstream projects&rsquo; own materials. It has not been audited or reviewed by a lawyer. See <a href="https://github.com/Neon-Harbor-Labs/redact-local/blob/main/docs/LEGAL-NOTES.md">docs/LEGAL-NOTES.md</a> for what was checked and what is uncertain.</p>
 <p>Warranty: this software is provided &ldquo;as is&rdquo;, without warranty of any kind. Redaction is a safety-critical task: always check the output yourself.</p>
 </main>
-<footer><p>Redact Local is free software published by Neon Harbor Labs. Copyright &copy; 2026 Juleus Chapman.</p><a href="./">The tool</a><a href="https://github.com/Neon-Harbor-Labs/redact-local">Source code</a><a href="licenses/AGPL-3.0.txt">AGPL-3.0-or-later</a></footer>
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="./">The tool</a><a href="https://github.com/Neon-Harbor-Labs/redact-local">Source code</a><a href="licenses/AGPL-3.0.txt">AGPL-3.0-or-later</a><a href="https://neonharborlabs.com">Neon Harbor Labs</a></nav>
+    <p>Redact Local is free software published by Neon Harbor Labs. Copyright &copy; 2026 Juleus Chapman.</p>
+  </div>
+</footer>
 </body>
 </html>

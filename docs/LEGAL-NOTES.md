@@ -14,3 +14,4 @@
 5. **Copyright holder.** Copyright is attributed to Juleus Chapman personally. No contributor agreement exists. Public brand: Neon Harbor Labs (not a legal entity statement).
 6. **Trademarks and patents.** Not assessed. Names "MuPDF", "Artifex", "Tesseract", "pdf.js" belong to their owners.
 7. **Privacy law claims.** The tool is described as processing documents locally; no statement about compliance with GDPR/HIPAA or any other law is made or implied.
+8. **Logo and typeface (added with the 2026-10 redesign).** The Neon Harbor Labs logo is included in the public repository and the app. It is the publisher's brand asset, and nothing here states whether it is licensed under the AGPL or reserved (a trademark/branding carve-out may be wanted). Poppins is bundled under SIL OFL 1.1 with its license text.

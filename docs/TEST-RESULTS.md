@@ -82,3 +82,8 @@ In the UI, after a rejected file the work area is hidden, the old result is clea
 - `node tools/check-headers.mjs <url>` passes (same-origin redirects followed: `/index.html` -> `/`, `/about.html` -> `/about`). Served wasm/OCR data/app.js/HTML are byte-identical to the release files.
 - Chrome, in-browser: a synthetic text PDF and a synthetic scanned PDF (OCR) were processed, verified and downloaded; all requests same-origin; no CSP violations or console errors.
 - Not tested live: mixed text+image PDF, Firefox, phones/iPhone.
+
+## 8. Redesign (Neon Harbor Labs look), live on the Worker
+- New landing page, document workspace and results screen (HTML/CSS plus `js/ui.js` for presentation only; detection, OCR, redaction, sanitization and verification code is unchanged, one `aria-label`/markup tweak in the category checkboxes in `app.js`).
+- Chrome, live URL, desktop 1440x900 and Pixel 7: axe (WCAG 2.1 AA) reports 0 violations on the landing page, the workspace and the results; no sideways scroll; page images exactly overlay their boxes (checked: image and page box widths equal, manual box drawn at 50,300 became exactly 150x50); text, scanned (OCR) and mixed text+image PDFs were redacted, verified (including the second OCR pass) and the download link produced; no CSP violations; every request same-origin; Poppins and the logo are served from this site.
+- Not tested: Firefox, Safari, real phones; screen-reader use beyond axe; a drag-and-drop of a real file (the handler uses the same code path as the Choose button).

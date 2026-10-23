@@ -41,4 +41,8 @@ This site redistributes the following components unmodified. Full license texts 
 6. compromise 14.19.0 - Copyright (c) 2026 Spencer Kelly. License: MIT (compromise-LICENSE.txt). Source: https://github.com/spencermountain/compromise
    File: vendor/compromise/compromise-three.mjs
 
+7. Poppins typeface (Latin subset, unmodified WOFF) - Copyright 2020 The Poppins Project Authors. License: SIL OFL 1.1 (public/licenses/poppins-LICENSE.txt). Files: public/fonts/*.woff.
+
+8. Neon Harbor Labs logo (public/img/) - brand asset of Neon Harbor Labs, shown to identify the publisher; see docs/LEGAL-NOTES.md.
+
 Every vendored file, its exact upstream package, version and SHA-256 are listed in tools/vendor-sources.json and public/vendor/SHA256SUMS.

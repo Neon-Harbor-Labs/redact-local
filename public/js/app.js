@@ -130,7 +130,7 @@ function renderGroups() {
     const sum = el('summary'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = list.every((d) => d.selected); cb.indeterminate = !cb.checked && list.some((d) => d.selected);
     cb.onclick = (ev) => { ev.stopPropagation(); list.forEach((d) => (d.selected = cb.checked)); renderAll(); };
     const poss = list.filter((d) => d.confidence !== 'high').length;
-    sum.append(cb, el('span', null, LABEL[cat] + ' (' + list.length + (poss ? ', ' + poss + ' possible' : '') + ')')); det.appendChild(sum);
+    cb.setAttribute('aria-label', 'Select all: ' + LABEL[cat]); sum.append(el('span', null, LABEL[cat] + ' (' + list.length + (poss ? ', ' + poss + ' possible' : '') + ')')); det.append(cb, sum);   // the checkbox sits beside the summary (not inside it) so it is a separate, labelled control
     const items = el('div', 'items');
     for (const d of list) {
       const row = el('label', 'item'); const c = el('input'); c.type = 'checkbox'; c.checked = d.selected; c.onchange = () => { d.selected = c.checked; renderAll(); };

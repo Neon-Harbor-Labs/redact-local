@@ -26,4 +26,4 @@ test('no junk, secrets or personal data in the release', () => {
   for (const f of all.filter((x) => /\.(md|json|js|mjs|html|css|txt|yml)$/.test(x) && !x.includes('/licenses/') && !x.endsWith('THIRD_PARTY_NOTICES.md') && !x.endsWith('tests/static.test.mjs') && !x.includes('/docs/upstream-'))) { const s = fs.readFileSync(f, 'utf8'); assert(!/rainbroz|\/Users\/|\/Volumes\/|lucidprideai|BEGIN (RSA |EC )?PRIVATE KEY|api[_-]?key\s*[:=]/i.test(s), f); }
 });
 test('vendored files match their pinned upstream hashes', () => { const r = spawnSync('node', ['tools/check-vendor.mjs'], { cwd: root, encoding: 'utf8' }); assert.equal(r.status, 0, r.stdout); });
-test('every file fits Cloudflare Pages limits', () => { const r = spawnSync('node', ['tools/size-report.mjs'], { cwd: root, encoding: 'utf8' }); assert.equal(r.status, 0, r.stdout); });
+test('every file fits Cloudflare static-assets limits', () => { const r = spawnSync('node', ['tools/size-report.mjs'], { cwd: root, encoding: 'utf8' }); assert.equal(r.status, 0, r.stdout); });
