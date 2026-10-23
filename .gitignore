@@ -1,0 +1,10 @@
+node_modules/
+tests/out/
+*.log
+.DS_Store
+._*
+.env
+.env.*
+.wrangler/
+dist/
+*.zip

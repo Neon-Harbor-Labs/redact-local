@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redact Local - free, private PDF redaction</title>
+<meta name="description" content="A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information, even in scanned documents.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="skip" href="#start">Skip to the tool</a>
+<header>
+  <h1>Redact Local</h1>
+  <nav class="topnav" aria-label="Site"><a href="about.html">About &amp; licenses</a><a href="https://github.com/neon-harbor-labs/redact-local">Source code</a></nav>
+  <p class="tag">A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information&mdash;even in scanned documents.</p>
+  <p class="priv">Your PDF is processed on this device only. It is never uploaded.</p>
+</header>
+
+<section id="start" class="card">
+  <label class="big" for="file">Choose a PDF to scan</label>
+  <input id="file" type="file" accept=".pdf,application/pdf">
+  <p id="status" role="status" aria-live="polite"></p>
+  <ul class="expect">
+    <li><b>Processed locally.</b> Everything runs in your browser. No upload, no account, no tracking.</li>
+    <li><b>You review first.</b> Detected items are highlighted and pre-selected; nothing changes until you click <em>Redact Selected Information</em>. Uncheck anything that is not personal data.</li>
+    <li><b>Detection can miss information.</b> Names and addresses especially, and anything OCR cannot read (handwriting, faint or skewed scans).</li>
+    <li><b>Inspect the result before sharing it.</b> Open the downloaded file and check every page.</li>
+    <li><b>What &ldquo;verified&rdquo; means.</b> The tool checks that the items you selected were removed and that hidden data (metadata, comments, attachments) was stripped. It does <em>not</em> prove that every sensitive item was found.</li>
+  </ul>
+  <p class="tiny">Limits: PDFs up to 50&nbsp;MB and 100 pages; pages that need OCR (scans, or large images) up to 20 pages and 25&nbsp;MB, about 10 seconds per page. Works best on a desktop browser.</p>
+</section>
+
+<section id="work" hidden>
+  <aside>
+    <div class="sticky">
+      <div id="summary"></div>
+      <p class="explain"><b>Privacy-first:</b> everything detected is selected. Items marked <b>possible</b> may not be personal information &mdash; uncheck any that are wrong. Nothing is changed until you click the button.</p>
+      <div class="legend"><span><i class="k likely"></i>likely</span><span><i class="k poss"></i>possible</span><span><i class="k off"></i>unchecked (stays visible)</span> <button id="togglePoss" class="linkish"></button></div>
+      <div id="warnings"></div>
+      <button id="go" class="primary">Redact Selected Information</button>
+      <p id="count" class="count"></p>
+      <p class="tiny">Detection can miss things, especially names and addresses. Review the PDF yourself.</p>
+      <label class="manual"><input type="checkbox" id="manual"> Draw a box manually (backup)</label>
+    </div>
+    <div id="groups"></div>
+  </aside>
+  <main id="pages"></main>
+</section>
+
+<section id="result" hidden class="card"></section>
+<footer>
+  <a href="about.html">About &amp; licenses</a><a href="https://github.com/neon-harbor-labs/redact-local">Source code (AGPL-3.0-or-later)</a><a href="about.html#privacy">Privacy</a>
+  <p>Redact Local &middot; free software by Neon Harbor Labs. No warranty. It does not guarantee that all personal information is found or removed.</p>
+</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

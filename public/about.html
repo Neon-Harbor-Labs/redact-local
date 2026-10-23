@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Redact Local - privacy, limits and licenses</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header>
+  <h1><a href="./" style="color:inherit;text-decoration:none">Redact Local</a></h1>
+  <nav class="topnav" aria-label="Site"><a href="./">The tool</a><a href="https://github.com/neon-harbor-labs/redact-local">Source code</a></nav>
+  <p class="tag">A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information&mdash;even in scanned documents.</p>
+</header>
+<main class="prose">
+
+<h2 id="how">How it works</h2>
+<ol>
+  <li>You choose a PDF. The scan runs in your browser: text is read with MuPDF; pages that are images are read with OCR (Tesseract).</li>
+  <li>Patterns and context rules find SSNs, card and bank numbers, phone numbers, emails, dates of birth, addresses and ID numbers. A small language-analysis library (compromise) suggests personal names. Everything it finds is highlighted and pre-selected, and uncertain matches are marked <em>possible</em>.</li>
+  <li>You review the detections and uncheck anything that is not personal data. Nothing changes until you click <em>Redact Selected Information</em>.</li>
+  <li>The selected content is removed from the PDF itself (text is deleted from the page content and image pixels under each box are blanked), then comments, form fields, attachments, bookmarks, links, scripts and metadata are stripped. A second program (pdf.js) re-opens the result and checks it.</li>
+  <li>You download the new file. Your original is never modified.</li>
+</ol>
+
+<h2 id="privacy">Privacy</h2>
+<p>Your PDF is processed on your device. The page makes no requests to other websites: all code, WebAssembly files and the OCR language data are served from this site, and the page&rsquo;s security policy forbids connections to anywhere else. There are no cookies, no analytics and no accounts, and your document is never stored or sent. Closing the tab discards everything.</p>
+
+<h2 id="limits">What to expect, and what is not guaranteed</h2>
+<ul>
+  <li><b>Detection can miss information.</b> Names and addresses are the hardest; unusual names, non-English text, handwriting and faint or skewed scans are often missed. Some detections will not be personal data.</li>
+  <li><b>Inspect the result.</b> Open the downloaded file and check every page before sharing it.</li>
+  <li><b>&ldquo;Verified&rdquo; means</b> the items you selected were removed and hidden data was stripped. It does <em>not</em> mean every sensitive item in the original was found.</li>
+  <li>Names marked <em>partial?</em> may be only part of a person&rsquo;s name.</li>
+  <li>Small images (under about 2% of a page, such as logos or stamps) are not read by OCR.</li>
+  <li>Not supported: password-protected PDFs, PDFs with optional-content layers, XFA forms. These are rejected with a message instead of being processed.</li>
+  <li>Limits: 50&nbsp;MB and 100 pages per PDF; pages that need OCR: 20 pages and 25&nbsp;MB per PDF (about 10 seconds per page). Exported scans can be several times larger than the original.</li>
+  <li>OCR needs a current browser with WebAssembly SIMD (recent Chrome, Edge, Firefox or Safari). If it is missing you are told, and scanned pages are not read.</li>
+  <li>This is free software provided without warranty. It has not been independently security-audited.</li>
+</ul>
+
+<h2 id="source">Source code</h2>
+<p>Redact Local is free software under the <a href="licenses/AGPL-3.0.txt">GNU Affero General Public License, version 3 or (at your option) any later version</a>. The complete corresponding source of this site, including the build and test scripts, is at <a href="https://github.com/neon-harbor-labs/redact-local">github.com/neon-harbor-labs/redact-local</a>. You may copy, modify and run it under the same license; if you run a modified version for others over a network you must offer them your modified source.</p>
+<p>The MuPDF engine is shipped as the WebAssembly build from the MuPDF.js 1.28.1 package. Its source code is published by Artifex Software: <a href="https://cgit.ghostscript.com/mupdf.git">cgit.ghostscript.com/mupdf.git</a>.</p>
+
+<h2 id="licenses">Third-party components and licenses</h2>
+<table>
+<thead><tr><th>Component</th><th>Version</th><th>License</th><th>Used for</th><th>Full text / source</th></tr></thead>
+<tbody>
+<tr><td>Redact Local</td><td>1.0.0</td><td>AGPL-3.0-or-later</td><td>this application</td><td><a href="licenses/AGPL-3.0.txt">license</a></td></tr>
+<tr><td>MuPDF.js (MuPDF WebAssembly build), &copy; 2004-2026 Artifex Software, Inc.</td><td>1.28.1</td><td>AGPL-3.0-or-later</td><td>reading, redacting and writing PDFs</td><td><a href="licenses/mupdf-LICENSE.txt">license</a> &middot; <a href="https://cgit.ghostscript.com/mupdf.git">source</a></td></tr>
+<tr><td>pdf.js, &copy; Mozilla Foundation</td><td>6.4.299</td><td>Apache-2.0</td><td>independent verification of the result</td><td><a href="licenses/pdfjs-LICENSE.txt">license</a> &middot; <a href="https://github.com/mozilla/pdf.js">source</a></td></tr>
+<tr><td>Tesseract.js</td><td>7.0.0</td><td>Apache-2.0</td><td>OCR in the browser</td><td><a href="licenses/tesseractjs-LICENSE.txt">license</a> &middot; <a href="https://github.com/naptha/tesseract.js">source</a></td></tr>
+<tr><td>tesseract.js-core (WebAssembly build of Tesseract OCR with Leptonica, zlib, libtiff, giflib, libpng, libjpeg, libwebp)</td><td>7.0.0</td><td>Apache-2.0 (Tesseract); the bundled libraries have their own permissive licenses</td><td>OCR engine</td><td><a href="licenses/tesseract-core-LICENSE.txt">license</a> &middot; <a href="licenses/tesseract-ocr-LICENSE.txt">Tesseract OCR license</a> &middot; <a href="https://github.com/naptha/tesseract.js-core">source</a></td></tr>
+<tr><td>Tesseract English language data (&ldquo;tessdata_best&rdquo;, integerized)</td><td>4.0.0_best_int</td><td>Apache-2.0</td><td>OCR language model</td><td><a href="licenses/tessdata_best-LICENSE.txt">license</a> &middot; <a href="https://github.com/tesseract-ocr/tessdata_best">source</a></td></tr>
+<tr><td>compromise, &copy; Spencer Kelly</td><td>14.19.0</td><td>MIT</td><td>suggesting personal names</td><td><a href="licenses/compromise-LICENSE.txt">license</a> &middot; <a href="https://github.com/spencermountain/compromise">source</a></td></tr>
+</tbody></table>
+<p>Notices bundled inside Tesseract.js (<a href="licenses/tesseractjs-worker.min.js.LICENSE.txt">worker</a>, <a href="licenses/tesseractjs-tesseract.min.js.LICENSE.txt">loader</a>) cover the MIT/BSD-3-Clause code it includes (buffer, ieee754, regenerator-runtime, zlib.js). See <a href="licenses/NOTICES.txt">NOTICES.txt</a> for the full attribution text.</p>
+<p>Warranty: this software is provided &ldquo;as is&rdquo;, without warranty of any kind. Redaction is a safety-critical task: always check the output yourself.</p>
+</main>
+<footer><a href="./">The tool</a><a href="https://github.com/neon-harbor-labs/redact-local">Source code</a><a href="licenses/AGPL-3.0.txt">AGPL-3.0-or-later</a></footer>
+</body>
+</html>

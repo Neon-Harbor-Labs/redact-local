@@ -1,0 +1,18 @@
+{
+  "name": "redact-local",
+  "version": "1.0.0",
+  "description": "A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information, even in scanned documents. Runs entirely in the browser.",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "repository": { "type": "git", "url": "git+https://github.com/neon-harbor-labs/redact-local.git" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "serve": "node tools/serve.mjs --port 8788",
+    "test": "node --test tests/*.test.mjs",
+    "check:vendor": "node tools/check-vendor.mjs",
+    "check:size": "node tools/size-report.mjs",
+    "check:headers": "node tools/check-headers.mjs http://127.0.0.1:8788",
+    "fetch:vendor": "node tools/fetch-vendor.mjs"
+  }
+}

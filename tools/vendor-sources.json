@@ -1,0 +1,79 @@
+{
+ "mupdf/mupdf.js": {
+  "package": "mupdf@1.28.1",
+  "path": "/dist/mupdf.js",
+  "url": "https://cdn.jsdelivr.net/npm/mupdf@1.28.1/dist/mupdf.js",
+  "bytes": 103250,
+  "sha256": "5d237eadcb9640584e0050f6f958e547887b7a54d80a04043e12be9420931076"
+ },
+ "mupdf/mupdf-wasm.js": {
+  "package": "mupdf@1.28.1",
+  "path": "/dist/mupdf-wasm.js",
+  "url": "https://cdn.jsdelivr.net/npm/mupdf@1.28.1/dist/mupdf-wasm.js",
+  "bytes": 28861,
+  "sha256": "25382abbfbf5c52191e5ac59e1412a0da88647fecfab0c1d797bb5948443eea4"
+ },
+ "mupdf/mupdf-wasm.wasm": {
+  "package": "mupdf@1.28.1",
+  "path": "/dist/mupdf-wasm.wasm",
+  "url": "https://cdn.jsdelivr.net/npm/mupdf@1.28.1/dist/mupdf-wasm.wasm",
+  "bytes": 10409826,
+  "sha256": "5a30ef7b027f541ea8fc54e7c73f16414b0b59940741a12efe5e55f1fd0a99d7"
+ },
+ "pdfjs/pdf.min.mjs": {
+  "package": "pdfjs-dist@6.4.299",
+  "path": "/build/pdf.min.mjs",
+  "url": "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.4.299/build/pdf.min.mjs",
+  "bytes": 458904,
+  "sha256": "57456c8e0c81e46be31174b499ef77f2b9f5ee46d04412ba627320a36755d4c2"
+ },
+ "pdfjs/pdf.worker.min.mjs": {
+  "package": "pdfjs-dist@6.4.299",
+  "path": "/build/pdf.worker.min.mjs",
+  "url": "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.4.299/build/pdf.worker.min.mjs",
+  "bytes": 1264342,
+  "sha256": "9536359f1b8367850d485731ca1d5e45c159a7b7a0912325e539937aa21ceb18"
+ },
+ "compromise/compromise-three.mjs": {
+  "package": "compromise@14.19.0",
+  "path": "/builds/three/compromise-three.mjs",
+  "url": "https://cdn.jsdelivr.net/npm/compromise@14.19.0/builds/three/compromise-three.mjs",
+  "bytes": 357095,
+  "sha256": "deeb740af4d348fe93a2eac5e2fc4de9503f1b6d958f17cc6b50a06148c18f29"
+ },
+ "tesseract/tesseract.min.js": {
+  "package": "tesseract.js@7.0.0",
+  "path": "/dist/tesseract.min.js",
+  "url": "https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/tesseract.min.js",
+  "bytes": 62961,
+  "sha256": "000c27d9cd0def655f77b36c72a389c0ab13793aa31cb4d7aab56d09c0afbc7e"
+ },
+ "tesseract/worker.min.js": {
+  "package": "tesseract.js@7.0.0",
+  "path": "/dist/worker.min.js",
+  "url": "https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/worker.min.js",
+  "bytes": 111307,
+  "sha256": "576b7df7e3393e137e51849357c9adb53fe7ac1bb69bfa06cf3d61520f182c6d"
+ },
+ "tesseract/eng.traineddata.gz": {
+  "package": "@tesseract.js-data/eng@1.0.0",
+  "path": "/4.0.0_best_int/eng.traineddata.gz",
+  "url": "https://cdn.jsdelivr.net/npm/@tesseract.js-data/eng@1.0.0/4.0.0_best_int/eng.traineddata.gz",
+  "bytes": 2952873,
+  "sha256": "45b4cb346724ac1774f1c36f42f182b887bcdb28ebe63e6fff90ac41f3fcff91"
+ },
+ "tesseract/core/tesseract-core-relaxedsimd-lstm.wasm.js": {
+  "package": "tesseract.js-core@7.0.0",
+  "path": "/tesseract-core-relaxedsimd-lstm.wasm.js",
+  "url": "https://cdn.jsdelivr.net/npm/tesseract.js-core@7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js",
+  "bytes": 3905767,
+  "sha256": "861a536cf9ef8e63cb644d57bab39c388f37f7d6b6f60024b741c5f6b39a59b3"
+ },
+ "tesseract/core/tesseract-core-simd-lstm.wasm.js": {
+  "package": "tesseract.js-core@7.0.0",
+  "path": "/tesseract-core-simd-lstm.wasm.js",
+  "url": "https://cdn.jsdelivr.net/npm/tesseract.js-core@7.0.0/tesseract-core-simd-lstm.wasm.js",
+  "bytes": 3899472,
+  "sha256": "c58b46a4c796c0b8afccf77591d5b875b6896b45d402bbce8caa6f5362447b38"
+ }
+}
