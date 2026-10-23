@@ -13,6 +13,9 @@ This site redistributes the following components unmodified. Full license texts 
    Third-party libraries linked into the WASM (evidence: strings in the shipped file + platform/wasm/tools/build.sh): FreeType, HarfBuzz, jbig2dec,
    Little CMS (lcms2), OpenJPEG, libjpeg, gumbo-parser, cmark-gfm, zlib. Their license texts: mupdf-third-party-licenses.txt.
    Portions of this software are copyright (c) 2026 The FreeType Project (www.freetype.org). All rights reserved.
+   (Year taken from the bundled FreeType 2.14.3, released 2026-03-22: its source headers read "Copyright (C) 1996-2026".)
+   A copy of the source archive is attached to this project's v1.0.0 release: https://github.com/Neon-Harbor-Labs/redact-local/releases/tag/v1.0.0
+   (file mupdf-1.28.1-source.tar.gz, SHA-256 dc94c60b2537e2ac9a2d379dd3801545f84a3a302d15c9da358362a1270707c3).
    Artifex also offers a commercial license for MuPDF; Redact Local does not use it.
    Files: vendor/mupdf/mupdf.js, mupdf-wasm.js, mupdf-wasm.wasm
 
@@ -26,8 +29,8 @@ This site redistributes the following components unmodified. Full license texts 
 
 4. tesseract.js-core 7.0.0 - License: Apache-2.0 (tesseract-core-LICENSE.txt). Source: https://github.com/naptha/tesseract.js-core
    A WebAssembly build of Tesseract OCR (Apache-2.0, tesseract-ocr-LICENSE.txt) compiled together with Leptonica, zlib, libtiff,
-   giflib, libpng, libjpeg, libwebp and OpenLibm (list taken from the core's .gitmodules and build.sh); their license texts are in
-   tesseract-core-bundled-libraries.txt.
+   giflib, libpng, libjpeg, libwebp and OpenLibm (list taken from the core's .gitmodules and build.sh); their license texts, taken at the commits pinned by
+   tesseract.js-core 7.0.0, are in tesseract-core-bundled-libraries.txt.
    This software is based in part on the work of the Independent JPEG Group.
    Files: vendor/tesseract/core/tesseract-core-relaxedsimd-lstm.wasm.js, tesseract-core-simd-lstm.wasm.js
 

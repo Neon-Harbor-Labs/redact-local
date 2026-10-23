@@ -1,12 +1,14 @@
 Licenses of the libraries compiled into tesseract.js-core 7.0.0 (WebAssembly build of Tesseract OCR).
-The library list is taken from the core's .gitmodules/build.sh (https://github.com/naptha/tesseract.js-core).
-The texts below were fetched from each project's upstream repository; the exact versions compiled into the core are those pinned by the core's third_party submodules.
-Tesseract OCR itself: Apache-2.0, see tesseract-ocr-LICENSE.txt.
+The library list and exact versions come from the core's own repository at the commit the npm package was published from
+(tesseract.js-core 7.0.0, gitHead acffef2b66eb44a31df297e11d905f4b39001068; directory third_party/ = git submodules pinned to the commits shown below).
+Each text was fetched from the library's upstream repository AT THE PINNED COMMIT.
+Tesseract OCR itself (fork pinned at 2a9c1c49c360): Apache-2.0, see tesseract-ocr-LICENSE.txt.
+No legal review of these texts has been done.
 
 ==============================================================================
-Leptonica (BSD-style license)
-Source: https://github.com/DanBloomberg/leptonica
-License text from: https://raw.githubusercontent.com/DanBloomberg/leptonica/master/leptonica-license.txt
+Leptonica
+Source: https://github.com/DanBloomberg/leptonica  (pinned commit 4af068b56a9674da915debea4ed7e1b9885b17e8)
+License text from: https://raw.githubusercontent.com/DanBloomberg/leptonica/4af068b56a9674da915debea4ed7e1b9885b17e8/leptonica-license.txt
 ==============================================================================
 /*====================================================================*
  -  Copyright (C) 2001-2020 Leptonica.  All rights reserved.
@@ -35,9 +37,9 @@ License text from: https://raw.githubusercontent.com/DanBloomberg/leptonica/mast
  *====================================================================*/
 
 ==============================================================================
-libjpeg (Independent JPEG Group; LuaDist mirror used by tesseract.js-core)
-Source: https://github.com/LuaDist/libjpeg
-License text from: https://raw.githubusercontent.com/LuaDist/libjpeg/master/README
+libjpeg (Independent JPEG Group; LuaDist mirror)
+Source: https://github.com/LuaDist/libjpeg  (pinned commit 6c0fcb8ddee365e7abc4d332662b06900612e923)
+License text from: https://raw.githubusercontent.com/LuaDist/libjpeg/6c0fcb8ddee365e7abc4d332662b06900612e923/README
 ==============================================================================
 LEGAL ISSUES
 ============
@@ -109,8 +111,8 @@ We are required to state that
 
 ==============================================================================
 giflib
-Source: https://github.com/mirrorer/giflib
-License text from: https://raw.githubusercontent.com/mirrorer/giflib/master/COPYING
+Source: https://github.com/mirrorer/giflib  (pinned commit fa37672085ce4b3d62c51627ab3c8cf2dda8009a)
+License text from: https://raw.githubusercontent.com/mirrorer/giflib/fa37672085ce4b3d62c51627ab3c8cf2dda8009a/COPYING
 ==============================================================================
 The GIFLIB distribution is Copyright (c) 1997  Eric S. Raymond
 
@@ -134,8 +136,8 @@ THE SOFTWARE.
 
 ==============================================================================
 libpng
-Source: https://github.com/glennrp/libpng
-License text from: https://raw.githubusercontent.com/glennrp/libpng/libpng16/LICENSE
+Source: https://github.com/glennrp/libpng  (pinned commit a37d4836519517bdce6cb9d956092321eca3e73b)
+License text from: https://raw.githubusercontent.com/glennrp/libpng/a37d4836519517bdce6cb9d956092321eca3e73b/LICENSE
 ==============================================================================
 COPYRIGHT NOTICE, DISCLAIMER, and LICENSE
 =========================================
@@ -143,8 +145,8 @@ COPYRIGHT NOTICE, DISCLAIMER, and LICENSE
 PNG Reference Library License version 2
 ---------------------------------------
 
- * Copyright (c) 1995-2026 The PNG Reference Library Authors.
- * Copyright (c) 2018-2026 Cosmin Truta.
+ * Copyright (c) 1995-2020 The PNG Reference Library Authors.
+ * Copyright (c) 2018-2020 Cosmin Truta.
  * Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson.
  * Copyright (c) 1996-1997 Andreas Dilger.
  * Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
@@ -274,13 +276,11 @@ be appreciated.
 
 ==============================================================================
 libtiff
-Source: https://gitlab.com/libtiff/libtiff
-License text from: https://gitlab.com/libtiff/libtiff/-/raw/master/LICENSE.md
+Source: https://gitlab.com/libtiff/libtiff  (pinned commit b51bb157123264e26d34c09cc673d213aea61fc7)
+License text from: https://gitlab.com/libtiff/libtiff/-/raw/b51bb157123264e26d34c09cc673d213aea61fc7/COPYRIGHT
 ==============================================================================
-# LibTIFF license
-
-Copyright © 1988-1997 Sam Leffler\
-Copyright © 1991-1997 Silicon Graphics, Inc.
+Copyright (c) 1988-1997 Sam Leffler
+Copyright (c) 1991-1997 Silicon Graphics, Inc.
 
 Permission to use, copy, modify, distribute, and sell this software and 
 its documentation for any purpose is hereby granted without fee, provided
@@ -301,36 +301,10 @@ WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF
 LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
 OF THIS SOFTWARE.
 
-# Lempel-Ziv & Welch Compression (tif_lzw.c) license
-The code of tif_lzw.c is derived from the compress program whose code is
-derived from software contributed to Berkeley by James A. Woods,
-derived from original work by Spencer Thomas and Joseph Orost.
-
-The original Berkeley copyright notice appears below in its entirety:
-
-Copyright (c) 1985, 1986 The Regents of the University of California.
-All rights reserved.
-
-This code is derived from software contributed to Berkeley by
-James A. Woods, derived from original work by Spencer Thomas
-and Joseph Orost.
-
-Redistribution and use in source and binary forms are permitted
-provided that the above copyright notice and this paragraph are
-duplicated in all such forms and that any documentation,
-advertising materials, and other materials related to such
-distribution and use acknowledge that the software was developed
-by the University of California, Berkeley.  The name of the
-University may not be used to endorse or promote products derived
-from this software without specific prior written permission.
-THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
-IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
-WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-
 ==============================================================================
 libwebp
-Source: https://github.com/webmproject/libwebp
-License text from: https://raw.githubusercontent.com/webmproject/libwebp/main/COPYING
+Source: https://github.com/webmproject/libwebp  (pinned commit 20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c)
+License text from: https://raw.githubusercontent.com/webmproject/libwebp/20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c/COPYING
 ==============================================================================
 Copyright (c) 2010, Google Inc. All rights reserved.
 
@@ -364,12 +338,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ==============================================================================
 zlib
-Source: https://github.com/madler/zlib
-License text from: https://raw.githubusercontent.com/madler/zlib/master/LICENSE
+Source: https://github.com/madler/zlib  (pinned commit 21767c654d31d2dccdde4330529775c6c5fd5389)
+License text from: https://raw.githubusercontent.com/madler/zlib/21767c654d31d2dccdde4330529775c6c5fd5389/README
 ==============================================================================
 Copyright notice:
 
- (C) 1995-2026 Jean-loup Gailly and Mark Adler
+ (C) 1995-2022 Jean-loup Gailly and Mark Adler
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -392,8 +366,8 @@ Copyright notice:
 
 ==============================================================================
 OpenLibm
-Source: https://github.com/JuliaMath/openlibm
-License text from: https://raw.githubusercontent.com/JuliaMath/openlibm/master/LICENSE.md
+Source: https://github.com/JuliaMath/openlibm  (pinned commit ae2d91698508701c83cab83714d42a1146dccf85)
+License text from: https://raw.githubusercontent.com/JuliaMath/openlibm/ae2d91698508701c83cab83714d42a1146dccf85/LICENSE.md
 ==============================================================================
 ## OpenLibm
 

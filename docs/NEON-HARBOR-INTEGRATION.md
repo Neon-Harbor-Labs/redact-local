@@ -1,4 +1,4 @@
-# NeonHarbor Labs integration (proposal - nothing here has been applied)
+# Neon Harbor Labs integration (proposal - nothing here has been applied)
 **Proposed URL:** `https://redact.neonharborlabs.com` (a separate Cloudflare Pages project named `redact-local`; fallback URL `https://redact-local.pages.dev`).
 
 ## Why a subdomain and a separate Pages project
