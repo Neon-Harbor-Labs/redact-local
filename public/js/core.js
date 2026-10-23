@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Gate 2: browser port of pdf_core.py (sanitize + deep verification) on MuPDF.js. ES module, no DOM, no network.
 export class PdfError extends Error {}
 export class RedactionFailed extends PdfError { constructor(m, report) { super(m); this.report = report || {}; } }

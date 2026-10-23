@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A free, private PDF redaction tool that automatically finds names, addresses, phone numbers and other sensitive information, even in scanned documents. Runs entirely in the browser.",
   "license": "AGPL-3.0-or-later",
+  "author": "Juleus Chapman",
   "private": true,
   "type": "module",
-  "repository": { "type": "git", "url": "git+https://github.com/neon-harbor-labs/redact-local.git" },
+  "repository": { "type": "git", "url": "git+https://github.com/Neon-Harbor-Labs/redact-local.git" },
   "engines": { "node": ">=20" },
   "scripts": {
     "serve": "node tools/serve.mjs --port 8788",

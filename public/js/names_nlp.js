@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Optional second pass for personal names using compromise (MIT, vendored in ../vendor/compromise). Adds POSSIBLE detections only; nothing here is ever pre-selected.
 // Rules: existing detections always win; candidates are cleaned so spans are never merged lists or carry stray words.
 import { rectsFor } from './detect.js';

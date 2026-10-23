@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Browser-only OCR for scanned pages (Tesseract.js, vendored in ./vendor/ocr). Nothing leaves the page: worker, wasm core and language data are local files.
 // Produces detections whose boxes are in PDF points (display space), ready for the existing MuPDF pixel redaction.
 import { detectDocument } from './detect.js';

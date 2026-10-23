@@ -1,14 +1,18 @@
 Redact Local - third-party notices
 ==================================
 Redact Local is free software: GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See AGPL-3.0.txt.
-Source: https://github.com/neon-harbor-labs/redact-local
+Source: https://github.com/Neon-Harbor-Labs/redact-local
 
 This site redistributes the following components unmodified. Full license texts are in this folder.
 
 1. MuPDF.js 1.28.1 (WebAssembly build of MuPDF)
    Copyright (C) 2004-2026 Artifex Software, Inc.
    License: GNU AGPL v3 or later (mupdf-LICENSE.txt). Source: https://cgit.ghostscript.com/mupdf.git
-   MuPDF incorporates third-party libraries under their own licenses; see the thirdparty/ directory of the MuPDF source.
+   Corresponding source: MuPDF 1.28.1 - official source archive https://mupdf.com/downloads/archive/mupdf-1.28.1-source.tar.gz ; git tag 1.28.1 at https://cgit.ghostscript.com/mupdf.git (mirror https://github.com/ArtifexSoftware/mupdf/tree/1.28.1).
+   The WebAssembly build scripts are in platform/wasm of that source (BUILDING.md, tools/build.sh, Emscripten 4.0.8).
+   Third-party libraries linked into the WASM (evidence: strings in the shipped file + platform/wasm/tools/build.sh): FreeType, HarfBuzz, jbig2dec,
+   Little CMS (lcms2), OpenJPEG, libjpeg, gumbo-parser, cmark-gfm, zlib. Their license texts: mupdf-third-party-licenses.txt.
+   Portions of this software are copyright (c) 2026 The FreeType Project (www.freetype.org). All rights reserved.
    Artifex also offers a commercial license for MuPDF; Redact Local does not use it.
    Files: vendor/mupdf/mupdf.js, mupdf-wasm.js, mupdf-wasm.wasm
 

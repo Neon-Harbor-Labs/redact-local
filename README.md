@@ -28,14 +28,14 @@ Any static file server works for development, but only `tools/serve.mjs` reprodu
 - `public/js/` - our code: `app.js` (UI), `worker.js` (PDF worker), `core.js` (redaction, sanitising, verification), `detect.js`, `names_nlp.js`, `partial.js`, `ocr.js`, `extract.js`, `verify_pdfjs.js`.
 - `public/vendor/` - unmodified third-party builds, pinned in `tools/vendor-sources.json` (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 - `tests/` - Node tests, synthetic fixtures (all data fictional), browser self-test. `tools/` - server, header/vendor/size checks.
-- `docs/` - [deployment](docs/DEPLOYMENT.md), [security review](docs/SECURITY-REVIEW.md), [limits](docs/LIMITS.md), [test results](docs/TEST-RESULTS.md), [Neon Harbor Labs integration](docs/NEON-HARBOR-INTEGRATION.md).
+- `docs/` - [deployment](docs/DEPLOYMENT.md), [security review](docs/SECURITY-REVIEW.md), [limits](docs/LIMITS.md), [test results](docs/TEST-RESULTS.md), [NeonHarbor Labs integration](docs/NEON-HARBOR-INTEGRATION.md).
 
 ## Limits (conservative, from measured memory use)
 50 MB / 100 pages per PDF. Pages that need OCR: 20 pages and 25 MB. Details and measurements: [docs/LIMITS.md](docs/LIMITS.md). Needs a current browser with WebAssembly SIMD for OCR (Chrome, Edge, Firefox, Safari); without it OCR pages are not read and you are told so.
 
 ## License
-Redact Local is free software under the **GNU Affero General Public License v3.0 or later** ([LICENSE](LICENSE)). Because it embeds MuPDF.js (AGPL-3.0-or-later), the whole combined work is distributed under the AGPL: if you modify it and offer it to others over a network you must offer them the modified source. Third-party components and their licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `public/licenses/`.
-Source for the MuPDF engine: https://cgit.ghostscript.com/mupdf.git (version 1.28.1 of the MuPDF.js package).
+Copyright (C) 2026 Juleus Chapman. Redact Local is free software under the **GNU Affero General Public License v3.0 or later** ([LICENSE](LICENSE)). Because it embeds MuPDF.js (AGPL-3.0-or-later), the whole combined work is distributed under the AGPL: if you modify it and offer it to others over a network you must offer them the modified source. Third-party components and their licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `public/licenses/`.
+Corresponding source for the MuPDF engine: MuPDF 1.28.1, https://mupdf.com/downloads/archive/mupdf-1.28.1-source.tar.gz (git tag 1.28.1 at https://cgit.ghostscript.com/mupdf.git; WebAssembly build scripts in platform/wasm). License texts of the libraries inside it: public/licenses/mupdf-third-party-licenses.txt.
 
 ## Security
 See [SECURITY.md](SECURITY.md) to report a vulnerability.

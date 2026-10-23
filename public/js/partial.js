@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Flags name detections that may be only PART of a person's name, so the UI never presents them as complete-name redactions.
 //  - a single word (first or last name only), or
 //  - directly next to a capitalised word that is not itself part of a detected name ("Nurse Esperanza").

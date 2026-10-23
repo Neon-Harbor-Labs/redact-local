@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Automatic detection of personal information. Pure JS, no DOM, no network, no models.
 // detectText(text)            -> matches [{category, confidence, reason, start, end}]
 // detectDocument(pages)       -> detections with per-line rects; pages = [{text, rects}] (rects[i] = [x0,y0,x1,y1] | null per char)

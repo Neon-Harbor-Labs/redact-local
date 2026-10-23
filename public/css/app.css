@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: AGPL-3.0-or-later - Redact Local, Copyright (C) 2026 Neon Harbor Labs */
+/* SPDX-License-Identifier: AGPL-3.0-or-later - Redact Local, Copyright (C) 2026 Juleus Chapman */
 :root{--bg:#0f1419;--fg:#e6e9ee;--mut:#8b95a5;--card:#171d25;--line:#2a3340;--acc:#4cc2a8;--red:#ff5c6c;--amb:#e0a030}
 @media (prefers-color-scheme:light){:root{--bg:#f6f7f9;--fg:#14181f;--mut:#5b6573;--card:#fff;--line:#d5dae1;--acc:#0a7d68;--red:#c62828;--amb:#a66a00}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif}

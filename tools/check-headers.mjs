@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Checks the REAL HTTP response headers (not the HTML) of a running site. Usage: node tools/check-headers.mjs https://your-site.example
 const base = (process.argv[2] || 'http://127.0.0.1:8788').replace(/\/$/, ''); let bad = 0;
 const must = { 'x-content-type-options': /^nosniff$/i, 'referrer-policy': /^no-referrer$/i, 'x-frame-options': /^deny$/i, 'cross-origin-opener-policy': /^same-origin$/i, 'cross-origin-resource-policy': /^same-origin$/i, 'permissions-policy': /camera=\(\)/, 'content-security-policy': null };

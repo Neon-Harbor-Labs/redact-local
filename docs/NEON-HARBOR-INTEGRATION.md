@@ -1,4 +1,4 @@
-# Neon Harbor Labs integration (proposal - nothing here has been applied)
+# NeonHarbor Labs integration (proposal - nothing here has been applied)
 **Proposed URL:** `https://redact.neonharborlabs.com` (a separate Cloudflare Pages project named `redact-local`; fallback URL `https://redact-local.pages.dev`).
 
 ## Why a subdomain and a separate Pages project
@@ -18,4 +18,4 @@ The site's own `_headers` CSP (`default-src 'self'`, `form-action 'self' mailto:
 Largest file 9.93 MiB (limit 25 MiB); 40 files (limit 20,000); total about 22.7 MiB. Verified by `npm run check:size`.
 
 ## Checklist before announcing
-Security review items in docs/SECURITY-REVIEW.md; the mailbox in SECURITY.md exists; the repository URL in `public/index.html` and `public/about.html` is the real one; a legal check of the AGPL obligations (source link visible, notices shipped).
+Security review items in docs/SECURITY-REVIEW.md; GitHub private vulnerability reporting is enabled on the repository; the repository URL in `public/index.html` and `public/about.html` is the real one; a legal check of the AGPL obligations (source link visible, notices shipped).

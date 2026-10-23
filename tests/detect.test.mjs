@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Accuracy floor for the detector on SYNTHETIC labelled documents (all names/numbers are fictional). Run: npm test
 import test from 'node:test'; import assert from 'node:assert/strict';
 import { detectDocument } from '../public/js/detect.js'; import { loadNlp, addNlpNames } from '../public/js/names_nlp.js';

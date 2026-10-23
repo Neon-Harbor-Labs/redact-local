@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Redaction engine, sanitisation and fail-safe behaviour on synthetic PDFs. Run: npm test
 import test from 'node:test'; import assert from 'node:assert/strict'; import fs from 'node:fs';
 import * as mupdf from '../public/vendor/mupdf/mupdf.js'; import * as core from '../public/js/core.js';

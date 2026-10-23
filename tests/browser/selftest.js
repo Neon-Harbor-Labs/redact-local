@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Browser self-test: runs the real pipeline (worker, detection, OCR, redaction, pdf.js verification) on synthetic fixtures and POSTs a report to the test server.
 import { ocrSupport, recognizeWords, detectOcrPages, filterImageWords, OCR_SCALE, stopOcr } from '/js/ocr.js';
 import { verifyWithPdfjs } from '/js/verify_pdfjs.js';

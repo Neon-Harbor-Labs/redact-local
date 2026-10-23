@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Redact Local, Copyright (C) 2026 Neon Harbor Labs. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
+// Redact Local, Copyright (C) 2026 Juleus Chapman. Free software: see LICENSE (GNU AGPL v3 or later). No warranty.
 // Re-downloads every vendored file from its pinned npm package via jsDelivr and checks it against the recorded SHA-256 and jsDelivr's own hash.
 // Usage: node tools/fetch-vendor.mjs [--hashes-only | --write]   (--hashes-only compares local files with jsDelivr's published SHA-256 without downloading any files)   (without --write it only compares; with --write it replaces local files that differ)
 import fs from 'node:fs'; import crypto from 'node:crypto'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
